@@ -1,0 +1,112 @@
+<!--Time the execution of the reverse function vs the more efficient function over 1 million runs of each using different strings. Which is faster? Thoughts?-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let textBoxValue = document.getElementById("myBox").value;
+
+            var slowTime = 0;
+            var fastTime = 0;
+            var nicTime = 0;
+            var startTime = 0;
+            var endTime = 0;
+            var bool = true;
+
+            startTime = new Date().getTime();
+            for (var i = 0; i < 10000000; i++)
+            {
+                bool = isPalindromeSlow(textBoxValue);
+            }
+            endTime = new Date().getTime();
+
+            slowTime = (endTime - startTime);
+
+            startTime = new Date().getTime();
+            for (var i = 0; i < 10000000; i++)
+            {
+                bool = isPalindromeFast(textBoxValue);
+            }
+            endTime = new Date().getTime();
+
+            fastTime = (endTime - startTime);
+
+            startTime = new Date().getTime();
+            for (var i = 0; i < 10000000; i++)
+            {
+                bool = isPalindromeNic(textBoxValue);
+            }
+            endTime = new Date().getTime();
+
+            nicTime = (endTime - startTime);
+
+            document.getElementById("answer1").innerHTML = slowTime;
+            document.getElementById("answer2").innerHTML = fastTime;
+            document.getElementById("answer3").innerHTML = fastTime;
+        }
+
+        function reverseString(input){
+            var newString = "";
+
+            for (var i = input.length - 1; i >= 0; i--)
+            {
+                newString += input.charAt(i);
+            }
+
+            return newString;
+        }
+
+        function isPalindromeSlow(input){
+            if (input == reverseString(input))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        function isPalindromeFast(input){
+            var s = 0;
+            var e = input.length - 1;
+            
+            while (s < e)
+            {
+                if(input.charAt(s) != input.charAt(e))
+                {
+                    return false;
+                }
+                s++;
+                e--;
+            }
+
+            return true;
+        }
+
+        function isPalindromeNic(input){
+            for(let i = 0; i < input.length/2; i++)
+            {
+                if(input.charAt(i) != input.charAt(input.length-i-1))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <input id="myBox" type="text"></input>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer1"></div>
+    <div id="answer2"></div>
+    <div id="answer3"></div>
+</body>
+
+</html>

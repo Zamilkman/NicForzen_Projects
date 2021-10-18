@@ -1,0 +1,42 @@
+<!--Make an empty array, and each time the user clicks their button add the value into the array and put the array into the div-->
+
+<html>
+
+<head>
+    <script>
+        let myArray = new Array();
+
+        function myfunction1(){
+            // This gets the value from the textbox
+            let textBoxValue = document.getElementById("myBox").value;
+
+            myArray.push(textBoxValue);
+
+            document.getElementById("answer").innerHTML = createString();
+        }
+
+        function createString(){
+            var myString = "";
+
+            for(var i = 0; i < myArray.length; i++)
+            {
+                myString += (myArray[i] + ", ");
+            }
+
+            myString = myString.substring(0, myString.length-2);
+
+            return myString;
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <input id="myBox" type="text"></input>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+</body>
+
+</html>

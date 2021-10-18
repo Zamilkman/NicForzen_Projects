@@ -1,0 +1,45 @@
+<!--Write a function that tells if a string is a palindrome using the reverse string function you wrote-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let textBoxValue = document.getElementById("myBox").value;
+
+            document.getElementById("answer").innerHTML = isPalindrome(textBoxValue);
+        }
+
+        function reverseString(input){
+            var newString = "";
+
+            for (var i = input.length - 1; i >= 0; i--)
+            {
+                newString += input.charAt(i);
+            }
+
+            return newString;
+        }
+
+        function isPalindrome(input){
+            if (input == reverseString(input))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <input id="myBox" type="text"></input>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+</body>
+
+</html>

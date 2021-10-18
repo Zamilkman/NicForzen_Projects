@@ -1,0 +1,42 @@
+<!--Use the more efficient way of checking for a palindrome and write a function that tells if a string is a palindrome using that-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let textBoxValue = document.getElementById("myBox").value;
+
+            document.getElementById("answer").innerHTML = isPalindrome(textBoxValue);
+        }
+
+        function isPalindrome(input){
+            var s = 0;
+            var e = input.length - 1;
+            
+            while (s < e)
+            {
+                if(input.charAt(s) != input.charAt(e))
+                {
+                    return false;
+                }
+                s++;
+                e--;
+            }
+
+            return true;
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <input id="myBox" type="text"></input>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+</body>
+
+</html>

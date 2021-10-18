@@ -1,0 +1,45 @@
+<!--Make an array with 100 random numbers in it-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let myArray = new Array();
+
+            for(var i = 0; i < 100; i++)
+            {
+                myArray.push(getRandomInt(10));
+            }
+
+            document.getElementById("answer").innerHTML = createString(myArray);
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max)+1;
+        }
+
+        function createString(input){
+            var myString = "";
+
+            for(var i = 0; i < input.length; i++)
+            {
+                myString += (input[i] + ", ");
+            }
+
+            myString = myString.substring(0, myString.length-2);
+
+            return myString;
+        }
+    </script>
+</head>
+
+
+<body>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+</body>
+
+</html>

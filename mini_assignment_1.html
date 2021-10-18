@@ -1,0 +1,72 @@
+<html>
+
+    <head>
+        <script>
+            function myfunction1(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // Make a messagebox (alert) with "Hello, " and then what
+                // they typed in
+                alert("Hello, " + textBoxValue);
+            }
+
+            function myfunction2(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // Messagebox the text they typed in in all caps
+                alert(textBoxValue.toUpperCase());
+            }
+
+            function myfunction3(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // Messagebox what they typed 3 times with a space in between
+                alert(textBoxValue + " " + textBoxValue + " " + textBoxValue);
+            }
+
+            function myfunction4(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // Messagebox what they typed in lowercase and then a space
+                // and then what they typed in uppercase
+                // Example: cat CAT
+                alert(textBoxValue.toLowerCase() + " " + textBoxValue.toUpperCase());
+            }
+
+            function myfunction5(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // Messagebox the third letter of what they typed
+                // This requires you to Google
+                alert(textBoxValue.charAt(2));
+
+            }
+
+            function myfunction6(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // Messagebox the first letter of what they typed as uppercase
+                alert(textBoxValue.toUpperCase().charAt(0));
+            }
+
+        </script>
+    </head>
+
+
+    <body>
+        <input id="myBox" type="text"></input>
+        <div id="box" onclick="myfunction1()">QUESTION 1</div>
+        <div id="box" onclick="myfunction2()">QUESTION 2</div>
+        <div id="box" onclick="myfunction3()">QUESTION 3</div>
+        <div id="box" onclick="myfunction4()">QUESTION 4</div>
+        <div id="box" onclick="myfunction5()">QUESTION 5</div>
+        <div id="box" onclick="myfunction6()">QUESTION 6</div>
+    </body>
+
+</html>

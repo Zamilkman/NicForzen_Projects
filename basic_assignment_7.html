@@ -1,0 +1,36 @@
+<!--Write a function that reverses a string-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let textBoxValue = document.getElementById("myBox").value;
+
+            document.getElementById("answer").innerHTML = reverseString(textBoxValue);
+        }
+
+        function reverseString(input){
+            var newString = "";
+
+            for (var i = input.length - 1; i >= 0; i--)
+            {
+                newString += input.charAt(i);
+            }
+
+            return newString;
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <input id="myBox" type="text"></input>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+</body>
+
+</html>

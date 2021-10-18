@@ -1,0 +1,45 @@
+<!--Print out the next 20 leap years-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let textBoxValue = document.getElementById("myBox").value;
+
+            var newString = "";
+            var year = parseInt(textBoxValue) + 1;
+            var leapsFound = 0;
+
+            while(leapsFound < 20)
+            {
+                if (year % 4 == 0)
+                {
+                    if (!(year % 100 == 0 && year % 400 != 0))
+                    {
+                            leapsFound += 1;
+                            newString += (year + ", ");
+                    }
+                }
+
+                year += 1;
+            }
+
+            newString = newString.substring(0, newString.length-2);
+
+            document.getElementById("answer").innerHTML = newString;
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <input id="myBox" type="text"></input>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+</body>
+
+</html>

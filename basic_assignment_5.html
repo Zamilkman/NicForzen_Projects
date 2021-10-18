@@ -1,0 +1,40 @@
+<!--Print out their input in all caps with a space in between each letter with spaces being turned into two spaces, ex "cat dog" -> "C A T  D O G"-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let textBoxValue = document.getElementById("myBox").value;
+            var newString = "";
+
+            for (var i = 0; i < textBoxValue.length; i++)
+            {
+                if (textBoxValue.charAt(i) == " ")
+                {
+                    newString += "  ";
+                }
+                else
+                {
+                    newString += textBoxValue.charAt(i).toUpperCase();
+                }
+            }
+            
+            newString = newString.trim()
+
+            document.getElementById("answer").innerHTML = newString;
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <input id="myBox" type="text"></input>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+</body>
+
+</html>

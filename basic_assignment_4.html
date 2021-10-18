@@ -1,0 +1,38 @@
+<!--Print out their input with every other letter capitalized and the others lower case-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let textBoxValue = document.getElementById("myBox").value;
+            var newString = "";
+
+            for (var i = 0; i < textBoxValue.length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    newString += textBoxValue.charAt(i).toUpperCase();
+                }
+                else
+                {
+                    newString += textBoxValue.charAt(i).toLowerCase();
+                }
+            }
+
+            document.getElementById("answer").innerHTML = newString;
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <input id="myBox" type="text"></input>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+</body>
+
+</html>

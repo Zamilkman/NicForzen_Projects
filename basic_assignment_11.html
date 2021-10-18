@@ -1,0 +1,58 @@
+<!--Write a function that tells if a string of "(" and ")" is well-formed, as in each close only happens after an open, and it ends all perfectly closed.-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let textBoxValue = document.getElementById("myBox").value;
+
+            document.getElementById("answer").innerHTML = checkString(textBoxValue);
+        }
+
+        function checkString(input){
+            var activeCount = 0;
+
+            for(var i = 0; i< input.length; i++)
+            {
+                if(input.charAt(i) == "(")
+                {
+                    activeCount += 1;
+                }
+                else if(input.charAt(i) == ")")
+                {
+                    activeCount -= 1;
+                }
+                else
+                {
+                    return "String isn't comprised only of ' ( ' & ' ) '.  Please Try Again.";
+                }
+
+                if(activeCount < 0)
+                {
+                    return "String is improperly formed.  Git Gud.";
+                }
+
+            }
+
+            if (activeCount == 0)
+            {
+                return "String is formed properly.  Good Job";
+            }
+
+            return "String is improperly formed.  Git Gud.";
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <input id="myBox" type="text"></input>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+</body>
+
+</html>

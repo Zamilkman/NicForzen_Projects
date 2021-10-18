@@ -1,0 +1,98 @@
+<!--Write a function that sorts an array without the use of other functions-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let myArray = new Array();
+
+            for(var i = 0; i < 100; i++)
+            {
+                myArray.push(getRandomInt(10));
+            }
+
+            myArray = sortArray(myArray);
+
+            document.getElementById("answer").innerHTML = createString(myArray);
+            document.getElementById("answer1").innerHTML = ("LOWEST:   " + findLowest(myArray));
+            document.getElementById("answer2").innerHTML = ("HIGHEST: " + findHighest(myArray));
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max)+1;
+        }
+
+        function sortArray(input){
+            var tempValue;
+
+            for(var i = 0; i < input.length; i++)
+            {
+                for(var n = 0; n < (input.length - 1); n++)
+                {
+                    if(input[n] > input[n+1])
+                    {
+                        tempValue = input[n+1];
+                        input[n+1] = input[n];
+                        input[n] = tempValue;
+                    }
+                }
+            }      
+            
+            return input;
+        }
+
+        function createString(input){
+            var myString = "";
+
+            for(var i = 0; i < input.length; i++)
+            {
+                myString += (input[i] + ", ");
+            }
+
+            myString = myString.substring(0, myString.length-2);
+
+            return myString;
+        }
+
+        function findLowest(input){
+            var lowestFound = input[0];
+
+            for(var i = 1; i < input.length; i++)
+            {
+                if (input[i] < lowestFound)
+                {
+                    lowestFound = input[i];
+                }
+            }
+
+            return lowestFound;
+        }
+
+        function findHighest(input){
+            var highestFound = input[0];
+
+            for(var i = 1; i < input.length; i++)
+            {
+                if (input[i] > highestFound)
+                {
+                    highestFound = input[i];
+                }
+            }
+
+            return highestFound;
+        }
+    </script>
+</head>
+
+
+<body>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+    <div id="answer1"></div>
+    <div id="answer2"></div>
+</body>
+
+</html>

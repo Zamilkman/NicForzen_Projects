@@ -1,0 +1,217 @@
+<html>
+
+    <head>
+        <script>
+            function myfunction1(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input starts with "dog"
+                
+                if (textBoxValue.substring(0,3) == "dog")
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+
+            function myfunction2(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input starts with "cat" ignoring any capitals, ex "cAt" still counts
+                
+                if (textBoxValue.toLowerCase().substring(0,3) == "cat")
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+
+            function myfunction3(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input starts with a vowel
+                
+                if ("aeiou".includes(textBoxValue.toLowerCase().charAt(0)))
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+
+            function myfunction4(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input starts with a number
+                
+                if ("1234567890".includes(textBoxValue.toLowerCase().charAt(0)))
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+
+            function myfunction5(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input is 5 letters long
+                
+                if (textBoxValue.length == 5)
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+
+            function myfunction6(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input is less than 4 letters long
+                
+                if (textBoxValue.length < 4)
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+
+            function myfunction7(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input is greater than or equal to 3 letters long
+                
+                if (textBoxValue.length >= 3)
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+            
+            function myfunction8(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input is all caps
+                
+                if (textBoxValue == textBoxValue.toUpperCase())
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+            
+            function myfunction9(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input is all lowercase
+                
+                if (textBoxValue == textBoxValue.toLowerCase())
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+            
+            function myfunction10(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input ends with "potato"
+                
+                if (textBoxValue.endsWith("potato"))
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+            
+            function myfunction11(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input has "yordle" anywhere in it
+                
+                if (textBoxValue.includes("yordle"))
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+            
+            function myfunction12(){
+                // This gets the value from the textbox
+                let textBoxValue = document.getElementById("myBox").value;
+
+                // If the user's input contains a vowel
+                const regex = /[aeiou]/i;
+                if (regex.test(textBoxValue))
+                {
+                    alert("YES");
+                }
+                else
+                {
+                    alert("NO");
+                }
+            }
+
+        </script>
+    </head>
+
+
+    <body>
+        <input id="myBox" type="text"></input>
+        <div id="box" onclick="myfunction1()">QUESTION 1</div>
+        <div id="box" onclick="myfunction2()">QUESTION 2</div>
+        <div id="box" onclick="myfunction3()">QUESTION 3</div>
+        <div id="box" onclick="myfunction4()">QUESTION 4</div>
+        <div id="box" onclick="myfunction5()">QUESTION 5</div>
+        <div id="box" onclick="myfunction6()">QUESTION 6</div>
+        <div id="box" onclick="myfunction7()">QUESTION 7</div>
+        <div id="box" onclick="myfunction8()">QUESTION 8</div>
+        <div id="box" onclick="myfunction9()">QUESTION 9</div>
+        <div id="box" onclick="myfunction10()">QUESTION 10</div>
+        <div id="box" onclick="myfunction11()">QUESTION 11</div>
+        <div id="box" onclick="myfunction12()">QUESTION 12</div>
+    </body>
+
+</html>
