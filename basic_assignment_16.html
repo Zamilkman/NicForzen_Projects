@@ -1,0 +1,131 @@
+<!--Compare the time execution of your function compared to the built in Javascript sort function over 1 million runs. Re-randomize the array contents after each sort.-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            let myArray = new Array();
+            let numArray = new Array();
+
+            let time1 = 0;
+            let time2 = 0;
+            let startTime = 0;
+            let endTime = 0;
+
+            for(var n = 0; n < 1000000; n++)
+            {
+                numArray.push(getRandomInt(10));
+            }
+
+            startTime = new Date().getTime();
+            for(let n = 0; n < 10000; n++)
+            {
+                for(let i = 0; i<100; i++)
+                {
+                    myArray.push(numArray[(n*100+i)]);
+                }
+                
+                myArray = sortArray(myArray);
+
+                myArray = new Array();
+            }
+            endTime = new Date().getTime();
+            time1 = endTime - startTime;
+
+            startTime = new Date().getTime();
+            for(let n = 0; n < 10000; n++)
+            {
+                for(let i = 0; i<100; i++)
+                {
+                    myArray.push(numArray[(n*100+i)]);
+                }
+                
+                myArray = myArray.sort();
+
+                myArray = new Array();
+            }
+            endTime = new Date().getTime();
+            time2 = endTime - startTime;
+
+            //document.getElementById("answer").innerHTML = createString(myArray);
+            document.getElementById("answer1").innerHTML = time1;
+            document.getElementById("answer2").innerHTML = time2;
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max)+1;
+        }
+
+        function sortArray(input){
+            var tempValue;
+
+            for(var i = 0; i < input.length; i++)
+            {
+                for(var n = 0; n < (input.length - 1); n++)
+                {
+                    if(input[n] > input[n+1])
+                    {
+                        tempValue = input[n+1];
+                        input[n+1] = input[n];
+                        input[n] = tempValue;
+                    }
+                }
+            }      
+            
+            return input;
+        }
+
+        function createString(input){
+            var myString = "";
+
+            for(var i = 0; i < input.length; i++)
+            {
+                myString += (input[i] + ", ");
+            }
+
+            myString = myString.substring(0, myString.length-2);
+
+            return myString;
+        }
+
+        function findLowest(input){
+            var lowestFound = input[0];
+
+            for(var i = 1; i < input.length; i++)
+            {
+                if (input[i] < lowestFound)
+                {
+                    lowestFound = input[i];
+                }
+            }
+
+            return lowestFound;
+        }
+
+        function findHighest(input){
+            var highestFound = input[0];
+
+            for(var i = 1; i < input.length; i++)
+            {
+                if (input[i] > highestFound)
+                {
+                    highestFound = input[i];
+                }
+            }
+
+            return highestFound;
+        }
+    </script>
+</head>
+
+
+<body>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+    <div id="answer1"></div>
+    <div id="answer2"></div>
+</body>
+
+</html>
