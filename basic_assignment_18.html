@@ -1,0 +1,54 @@
+<!--Write a string "contains" function. This should take in a string and a substring and return if the string contains the substring.
+    Ex: ("basketball", "ball") should return true. You shouldn't need help from functions for this except for charAt.-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let textBoxValue = document.getElementById("myBox").value;
+            let textBoxValue2 = document.getElementById("myBox2").value;
+
+            document.getElementById("answer").innerHTML = stringContains(textBoxValue, textBoxValue2);
+        }
+
+        function stringContains(Str, searchStr){
+            let x = 0;
+
+            for(let n = 0; n < Str.length; n++)
+            {
+                if(Str.charAt(n) == searchStr.charAt(x))
+                {
+                    x += 1;
+                    if(x == searchStr.length)
+                    {
+                        return true;
+                    }
+                }
+                else if(x != 0)
+                {
+                    x = 0;
+                    if(Str.charAt(n) == searchStr.charAt(x))
+                    {
+                        x += 1;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <input id="myBox" type="text"></input>
+    <input id="myBox2" type="text"></input>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+</body>
+
+</html>
