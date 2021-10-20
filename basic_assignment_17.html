@@ -1,0 +1,74 @@
+<!--Write a function that splits a string by spaces into an array of each word-->
+
+<html>
+
+<head>
+    <script>
+        function myfunction1(){
+            // This gets the value from the textbox
+            let textBoxValue = document.getElementById("myBox").value;
+            let myArray = new Array();
+            let newString = "";
+
+            myArray = splitStringByChar(textBoxValue, " ");
+
+            for(let n = 0; n < myArray.length; n++)
+            {
+                newString += (myArray[n]+", ");
+            }
+            newString = newString.substring(0, newString.length-2);
+
+            document.getElementById("answer").innerHTML = newString;
+        }
+
+        function splitStringByChar(input, char){
+            let myArray = new Array();
+            let s_pos = -1;
+            let e_pos = input.length;
+            let pos = 0;
+            let n = 0;
+
+            while(input.startsWith(char))
+            {
+                input = input.substring(1, input.length-2);
+            }
+
+            while(input.endsWith(char))
+            {
+                input = input.substring(0, input.length-1);
+            }
+
+            while(input.includes(char+char))
+            {
+                input.replace(char+char,char);
+            }
+
+            for(n = 0; n < input.length; n++)
+            {
+                if(input.charAt(n) == char)
+                {
+                    myArray.push(input.substring(pos, n));
+
+                    pos = n+1;
+                }
+            }
+
+            if(pos != n)
+            {
+                myArray.push(input.substring(pos, n));
+            }
+
+            return myArray;
+        }
+    </script>
+</head>
+
+
+<body>
+    <input id="myBox" type="text"></input>
+    <div id="box" onclick="myfunction1()">EXECUTE</div>
+    <br>
+    <div id="answer"></div>
+</body>
+
+</html>
