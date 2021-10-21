@@ -27,6 +27,7 @@
                     }
 
                     x += 1;
+
                     if(x == searchStr.length)
                     {
                         return pos;
@@ -35,11 +36,7 @@
                 else if(x != 0)
                 {
                     x = 0;
-                    if(Str.charAt(n) == searchStr.charAt(x))
-                    {
-                        pos = n;
-                        x += 1;
-                    }
+                    n = pos;
                 }
             }
 
